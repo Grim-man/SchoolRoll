@@ -33,6 +33,12 @@ public class StudentServiceImpl implements StudentService {
     }
 
     @Override
+    public List<Student> search(String name, String studentsId, Integer grade, Integer classId) {
+        return studentMapper.search(name, studentsId, grade, classId);
+    }
+
+
+    /* @Override
     public Student findByName(String name) {
         return studentMapper.findByName(name);
     }
@@ -55,5 +61,5 @@ public class StudentServiceImpl implements StudentService {
     @Override
     public Student findById(String id) {
         return studentMapper.findById(id);
-    }
+    } */
 }

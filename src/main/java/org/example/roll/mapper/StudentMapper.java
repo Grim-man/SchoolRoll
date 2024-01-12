@@ -30,7 +30,14 @@ public interface StudentMapper {
     @Delete("delete from student where id=#{id}")
     void remove(String id);
 
-    // 根据学生姓名查询学生信息
+    // 根据条件查询学生信息
+    @Select("select * from student where name=#{name} or students_id=#{studentsId} or grade=#{grade} or class_id=#{classId}")
+    List<Student> search(String name, String studentsId, Integer grade, Integer classId);
+
+
+
+
+    /* // 根据学生姓名查询学生信息
     @Select("select * from student where name=#{name}")
     Student findByName(String name);
 
@@ -47,5 +54,5 @@ public interface StudentMapper {
 
     // 根据学生ID查询学生信息
     @Select("select * from student where id=#{id}")
-    Student findById(String id);
+    Student findById(String id); */
 }

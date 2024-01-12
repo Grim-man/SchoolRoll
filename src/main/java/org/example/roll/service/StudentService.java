@@ -18,7 +18,10 @@ public interface StudentService {
     // 删除学生信息
     void remove(String id);
 
-    // 根据学生姓名查询学生信息
+    // 根据条件查询学生信息
+    List<Student> search(String name, String studentsId, Integer grade, Integer classId);
+
+    /* // 根据学生姓名查询学生信息
     Student findByName(String name);
 
     // 根据学生学籍编号查询学生信息
@@ -31,5 +34,8 @@ public interface StudentService {
     Student findByClassId(Integer classId);
 
     // 根据学生ID查询学生信息
-    Student findById(String id);
+    Student findById(String id); */
+
+    // 根据条件查询学生信息
+
 }

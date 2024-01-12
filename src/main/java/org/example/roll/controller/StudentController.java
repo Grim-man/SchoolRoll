@@ -44,7 +44,14 @@ public class StudentController {
         return Result.success("学生信息删除成功！");
     }
 
-    // 根据学生ID查询学生信息
+    // 根据条件查询学生信息：学生姓名 or 学籍编号 or 年级 or 班级等
+    @GetMapping("/search")
+    public Result<List<Student>> search(String name, String studentsId, Integer grade, Integer classId){
+        List<Student> searchInfos = studentService.search(name, studentsId, grade, classId);
+        return Result.success(searchInfos);
+    }
+
+    /* // 根据学生ID查询学生信息
     @GetMapping("/search")
     public Result<Student> search(String id){
         Student infoById = studentService.findById(id);
@@ -77,5 +84,5 @@ public class StudentController {
     public Result<Student> searchByClassId(Integer classId){
         Student infoByClassId = studentService.findByClassId(classId);
         return Result.success(infoByClassId);
-    }
+    } */
 }
